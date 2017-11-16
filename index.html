@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -83,10 +83,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="使用-hexo-遇到的问题"><a href="#使用-hexo-遇到的问题" class="headerlink" title="使用 hexo 遇到的问题"></a>使用 hexo 遇到的问题</h2><p>hexo deploy 的时候使用的是 git 的方式, 也安装了 git deployer, 还是报错</p>
-<blockquote>
-<p>Deployer not found: git</p>
-</blockquote>
+        <h2 id="使用-hexo-遇到的问题"><a href="#使用-hexo-遇到的问题" class="headerlink" title="使用 hexo 遇到的问题"></a>使用 hexo 遇到的问题</h2><p>hexo deploy 的时候使用的是 git 的方式, 也安装了 git deployer, 还是报错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Deployer not found: git</span><br></pre></td></tr></table></figure></p>
 <p>无奈只有人肉 push 到 git 上</p>
 <h2 id="vscode-可以做什么"><a href="#vscode-可以做什么" class="headerlink" title="vscode 可以做什么"></a>vscode 可以做什么</h2><p>经过思考, 可以通过 vscode 建立自定义 task 的方式, 实现自动发布</p>
 <ol>
@@ -97,7 +94,7 @@
 </li>
 <li>shift + cmd + p &gt; task &gt; 自定义task</li>
 <li><p>使用如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    // See https://go.microsoft.com/fwlink/?LinkId=733558</span><br><span class="line">    // for the documentation about the tasks.json format</span><br><span class="line">    &quot;version&quot;: &quot;2.0.0&quot;,</span><br><span class="line">    &quot;tasks&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;label&quot;: &quot;发布&quot;,</span><br><span class="line">            &quot;type&quot;: &quot;shell&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;rm ./blogs/* &amp;&amp;  mv ./scripts/public/* ./blogs/* &amp;&amp; git commit -m &apos;发布文章&apos; &amp;&amp; git push &quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;label&quot;: &quot;生成&quot;,</span><br><span class="line">            &quot;type&quot;: &quot;shell&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;cd ./scripts/ &amp;&amp; hexo clean &amp;&amp; hexo generate&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    // See https://go.microsoft.com/fwlink/?LinkId=733558</span><br><span class="line">    // for the documentation about the tasks.json format</span><br><span class="line">    &quot;version&quot;: &quot;2.0.0&quot;,</span><br><span class="line">    &quot;tasks&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;label&quot;: &quot;deploy&quot;,</span><br><span class="line">            &quot;type&quot;: &quot;shell&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;rm -rf ./blogs/* &amp;&amp;  mv -f ./scripts/public/* ./blogs/ &amp;&amp; cd ./blogs/ &amp;&amp; git add . &amp;&amp; git commit -m &apos;发布文章&apos; &amp;&amp; git push &quot;,</span><br><span class="line">            &quot;problemMatcher&quot;: []</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;label&quot;: &quot;generate&quot;,</span><br><span class="line">            &quot;type&quot;: &quot;shell&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;cd ./scripts/ &amp;&amp; hexo clean &amp;&amp; hexo generate&quot;,</span><br><span class="line">            &quot;problemMatcher&quot;: []</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>使用 shift + cmd + b &gt; 配置任务 &gt; 生成 &gt; 发布</p>
 </li>
@@ -106,7 +103,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/16/用-hexo-vscode-打造自己的博客客户端/" data-id="cja2b3lft0001apnbwm42utsi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/16/用-hexo-vscode-打造自己的博客客户端/" data-id="cja2b65e70001h8nbaoovpnhj" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技巧/">技巧</a></li></ul>
@@ -153,7 +150,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/16/hello-world/" data-id="cja2b3lfo0000apnbk0oc78r9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/16/hello-world/" data-id="cja2b65e30000h8nb9hxes1f0" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -173,7 +170,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧/">技巧</a></li></ul>
     </div>
@@ -183,7 +180,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
       <a href="/tags/技巧/" style="font-size: 10px;">技巧</a>
     </div>
@@ -202,7 +199,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -227,7 +224,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
