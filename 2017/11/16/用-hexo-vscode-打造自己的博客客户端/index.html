@@ -3,21 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>用 hexo + vscode 打造自己的博客客户端 | Hexo</title>
+  <title>用 hexo + vscode 打造自己的博客客户端 | Luyakus の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="使用 hexo 遇到的问题hexo deploy 的时候使用的是 git 的方式, 也安装了 git deployer, 还是报错1Deployer not found: git 无奈只有人肉 push 到 git 上 vscode 可以做什么经过思考, 可以通过 vscode 建立自定义 task 的方式, 实现自动">
 <meta name="keywords" content="技巧">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用 hexo + vscode 打造自己的博客客户端">
 <meta property="og:url" content="http://yoursite.com/2017/11/16/用-hexo-vscode-打造自己的博客客户端/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Luyakus の blog">
 <meta property="og:description" content="使用 hexo 遇到的问题hexo deploy 的时候使用的是 git 的方式, 也安装了 git deployer, 还是报错1Deployer not found: git 无奈只有人肉 push 到 git 上 vscode 可以做什么经过思考, 可以通过 vscode 建立自定义 task 的方式, 实现自动发布  建立如下文件夹 123ABC // 名字随意 |_____blogs |">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-11-16T10:03:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用 hexo + vscode 打造自己的博客客户端">
 <meta name="twitter:description" content="使用 hexo 遇到的问题hexo deploy 的时候使用的是 git 的方式, 也安装了 git deployer, 还是报错1Deployer not found: git 无奈只有人肉 push 到 git 上 vscode 可以做什么经过思考, 可以通过 vscode 建立自定义 task 的方式, 实现自动发布  建立如下文件夹 123ABC // 名字随意 |_____blogs |">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Luyakus の blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -38,7 +39,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">Luyakus の blog</a>
       </h1>
       
     </div>
@@ -53,9 +54,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -106,7 +107,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/16/用-hexo-vscode-打造自己的博客客户端/" data-id="cja2b65e70001h8nbaoovpnhj" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/11/16/用-hexo-vscode-打造自己的博客客户端/" data-id="cja2bc3in0001rvnb6wfowru4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技巧/">技巧</a></li></ul>
@@ -119,7 +120,7 @@
   
   
     <a href="/2017/11/16/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ancien</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">Hello World</div>
     </a>
   
@@ -137,7 +138,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">标签</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧/">技巧</a></li></ul>
     </div>
@@ -147,7 +148,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
       <a href="/tags/技巧/" style="font-size: 10px;">技巧</a>
     </div>
@@ -156,9 +157,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a></li></ul>
     </div>
   </div>
 
@@ -166,7 +167,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
         
@@ -190,8 +191,8 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 John Doe<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      &copy; 2017 Luyakus<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
