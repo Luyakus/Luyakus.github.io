@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Luyakus の blog</title>
+  <title>Tag: vscode | Luyakus の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Luyakus の blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/vscode/index.html">
 <meta property="og:site_name" content="Luyakus の blog">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
@@ -128,51 +128,34 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-用-hexo-vscode-打造自己的博客客户端" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/11/16/用-hexo-vscode-打造自己的博客客户端/" class="archive-article-date">
+  	<time datetime="2017-11-16T09:18:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-16</time>
+</a>
+        </div>
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/16/用-hexo-vscode-打造自己的博客客户端/">用 hexo + vscode 打造自己的博客客户端</a>
+      <a class="archive-article-title" href="/2017/11/16/用-hexo-vscode-打造自己的博客客户端/">用 hexo + vscode 打造自己的博客客户端</a>
     </h1>
   
 
-        
-        <a href="/2017/11/16/用-hexo-vscode-打造自己的博客客户端/" class="archive-article-date">
-  	<time datetime="2017-11-16T09:18:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="使用-hexo-遇到的问题"><a href="#使用-hexo-遇到的问题" class="headerlink" title="使用 hexo 遇到的问题"></a>使用 hexo 遇到的问题</h2><p>hexo deploy 的时候使用的是 git 的方式, 也安装了 git deployer, 还是报错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Deployer not found: git</span><br></pre></td></tr></table></figure></p>
-<p>无奈只有人肉 push 到 git 上</p>
-<h2 id="vscode-可以做什么"><a href="#vscode-可以做什么" class="headerlink" title="vscode 可以做什么"></a>vscode 可以做什么</h2><p>经过思考, 可以通过 vscode 建立自定义 task 的方式, 实现自动发布</p>
-<ol>
-<li><p>建立如下文件夹</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ABC // 名字随意</span><br><span class="line"> |_____blogs</span><br><span class="line"> |_____scripts</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>blogs 是实际要发布的文件, scripts 里 是 hexo init 生成的文件</p>
-</li>
-<li>shift + cmd + p &gt; task &gt; 自定义task</li>
-<li><p>使用如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    // See https://go.microsoft.com/fwlink/?LinkId=733558</span><br><span class="line">    // for the documentation about the tasks.json format</span><br><span class="line">    &quot;version&quot;: &quot;2.0.0&quot;,</span><br><span class="line">    &quot;tasks&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;label&quot;: &quot;deploy&quot;,</span><br><span class="line">            &quot;type&quot;: &quot;shell&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;rm -rf ./blogs/* &amp;&amp;  mv -f ./scripts/public/* ./blogs/ &amp;&amp; cd ./blogs/ &amp;&amp; git add . &amp;&amp; git commit -m &apos;发布文章&apos; &amp;&amp; git push &quot;,</span><br><span class="line">            &quot;problemMatcher&quot;: []</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;label&quot;: &quot;generate&quot;,</span><br><span class="line">            &quot;type&quot;: &quot;shell&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;cd ./scripts/ &amp;&amp; hexo clean &amp;&amp; hexo generate&quot;,</span><br><span class="line">            &quot;problemMatcher&quot;: []</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用 shift + cmd + b &gt; 配置任务 &gt; generate &gt; deploy</p>
-</li>
-<li>抛砖引玉, 大家当然也可以自己定义其他强大的 task</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -188,41 +171,19 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/16/用-hexo-vscode-打造自己的博客客户端/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
+    </div></section>
+  
+
+    
 
 
           </div>
@@ -244,10 +205,10 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: false,
