@@ -162,15 +162,19 @@
       
         <h2 id="使用-hexo-遇到的问题"><a href="#使用-hexo-遇到的问题" class="headerlink" title="使用 hexo 遇到的问题"></a>使用 hexo 遇到的问题</h2><p>hexo deploy 的时候使用的是 git 的方式, 也安装了 git deployer, 还是报错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Deployer not found: git</span><br></pre></td></tr></table></figure></p>
 <p>无奈只有人肉 push 到 git 上</p>
-<h2 id="vscode-可以做什么"><a href="#vscode-可以做什么" class="headerlink" title="vscode 可以做什么"></a>vscode 可以做什么</h2><p>经过思考, 可以通过 vscode 建立自定义 task 的方式, 实现自动发布<br>1.建立如下文件夹<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ABC // 名字随意</span><br><span class="line"> |_____blogs</span><br><span class="line"> |_____scripts</span><br></pre></td></tr></table></figure></p>
+<h2 id="vscode-可以做什么"><a href="#vscode-可以做什么" class="headerlink" title="vscode 可以做什么"></a>vscode 可以做什么</h2><p>经过思考, 可以通过 vscode 建立自定义 task 的方式, 实现自动发布</p>
+<ol>
+<li>建立如下文件夹</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ABC // 名字随意</span><br><span class="line"> |_____blogs</span><br><span class="line"> |_____scripts</span><br></pre></td></tr></table></figure>
 <ol>
 <li>blogs 是实际要发布的文件, scripts 里 是 hexo init 生成的文件</li>
 <li>shift + cmd + p &gt; task &gt; 自定义task</li>
-<li><p>使用如下</p>
+<li>使用如下</li>
+</ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    // See https://go.microsoft.com/fwlink/?LinkId=733558</span><br><span class="line">    // for the documentation about the tasks.json format</span><br><span class="line">    &quot;version&quot;: &quot;2.0.0&quot;,</span><br><span class="line">    &quot;tasks&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;label&quot;: &quot;deploy&quot;,</span><br><span class="line">            &quot;type&quot;: &quot;shell&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;rm -rf ./blogs/* &amp;&amp;  mv -f ./scripts/public/* ./blogs/ &amp;&amp; cd ./blogs/ &amp;&amp; git add . &amp;&amp; git commit -m &apos;发布文章&apos; &amp;&amp; git push &quot;,</span><br><span class="line">            &quot;problemMatcher&quot;: []</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;label&quot;: &quot;generate&quot;,</span><br><span class="line">            &quot;type&quot;: &quot;shell&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;cd ./scripts/ &amp;&amp; hexo clean &amp;&amp; hexo generate&quot;,</span><br><span class="line">            &quot;problemMatcher&quot;: []</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用 shift + cmd + b &gt; 配置任务 &gt; generate &gt; deploy</p>
-</li>
+<ol>
+<li>使用 shift + cmd + b &gt; 配置任务 &gt; generate &gt; deploy</li>
 <li>抛砖引玉, 大家当然也可以自己定义其他强大的 task</li>
 </ol>
 
