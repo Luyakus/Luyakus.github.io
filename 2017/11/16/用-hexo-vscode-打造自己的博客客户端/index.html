@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Luyakus の blog">
 <meta property="og:description" content="使用 hexo 遇到的问题hexo deploy 的时候使用的是 git 的方式, 也安装了 git deployer, 还是报错1Deployer not found: git 无奈只有人肉 push 到 git 上 vscode 可以做什么经过思考, 可以通过 vscode 建立自定义 task 的方式, 实现自动发布  建立如下文件夹 123ABC // 名字随意 |_____blogs |">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-16T10:03:41.000Z">
+<meta property="og:updated_time" content="2017-11-17T01:10:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用 hexo + vscode 打造自己的博客客户端">
 <meta name="twitter:description" content="使用 hexo 遇到的问题hexo deploy 的时候使用的是 git 的方式, 也安装了 git deployer, 还是报错1Deployer not found: git 无奈只有人肉 push 到 git 上 vscode 可以做什么经过思考, 可以通过 vscode 建立自定义 task 的方式, 实现自动发布  建立如下文件夹 123ABC // 名字随意 |_____blogs |">
@@ -100,14 +100,15 @@
 <li><p>使用如下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    // See https://go.microsoft.com/fwlink/?LinkId=733558</span><br><span class="line">    // for the documentation about the tasks.json format</span><br><span class="line">    &quot;version&quot;: &quot;2.0.0&quot;,</span><br><span class="line">    &quot;tasks&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;label&quot;: &quot;deploy&quot;,</span><br><span class="line">            &quot;type&quot;: &quot;shell&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;rm -rf ./blogs/* &amp;&amp;  mv -f ./scripts/public/* ./blogs/ &amp;&amp; cd ./blogs/ &amp;&amp; git add . &amp;&amp; git commit -m &apos;发布文章&apos; &amp;&amp; git push &quot;,</span><br><span class="line">            &quot;problemMatcher&quot;: []</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;label&quot;: &quot;generate&quot;,</span><br><span class="line">            &quot;type&quot;: &quot;shell&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;cd ./scripts/ &amp;&amp; hexo clean &amp;&amp; hexo generate&quot;,</span><br><span class="line">            &quot;problemMatcher&quot;: []</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>使用 shift + cmd + b &gt; 配置任务 &gt; 生成 &gt; 发布</p>
+<li><p>使用 shift + cmd + b &gt; 配置任务 &gt; generate &gt; deploy</p>
 </li>
+<li>抛砖引玉, 大家当然也可以自己定义其他强大的 task</li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/16/用-hexo-vscode-打造自己的博客客户端/" data-id="cja2bc3in0001rvnb6wfowru4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/16/用-hexo-vscode-打造自己的博客客户端/" data-id="cja37lp8w0001z5nbdwv7xuhb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技巧/">技巧</a></li></ul>
