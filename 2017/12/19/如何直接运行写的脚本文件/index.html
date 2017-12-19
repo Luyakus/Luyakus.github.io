@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>ruby 技巧 - $0 &amp; __FILE__ | Luyakus の blog</title>
+  <title>如何直接运行写的脚本文件 | Luyakus の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="经常在 ruby 脚本里看到123if $0 == __FILE__  xxxend 这样的句子, 不知道干嘛的, 解释如下  $0 表示用于启动程序的文件名 FILE 表示当前文件名, 被直接执行时不带路径, 被引用执行时带路径 上面代码的意思是, 只有当前文件作为直接执行文件时, if 里的语句会被执行  题外话,">
-<meta name="keywords" content="ruby">
+  <meta name="description" content="如何直接运行写的脚本文件 两种方式  shebang 1234# something you code in ruby#!usr/bin/env rubyputs &amp;apos;hello world&amp;apos;   1$ ./xxx.rb  path, 将写的文件复制到 /usr/local/bin 文">
+<meta name="keywords" content="技巧">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ruby 技巧 - $0 &amp; __FILE__">
-<meta property="og:url" content="http://yoursite.com/2017/12/13/ruby-技巧-0-FILE/index.html">
+<meta property="og:title" content="如何直接运行写的脚本文件">
+<meta property="og:url" content="http://yoursite.com/2017/12/19/如何直接运行写的脚本文件/index.html">
 <meta property="og:site_name" content="Luyakus の blog">
-<meta property="og:description" content="经常在 ruby 脚本里看到123if $0 == __FILE__  xxxend 这样的句子, 不知道干嘛的, 解释如下  $0 表示用于启动程序的文件名 FILE 表示当前文件名, 被直接执行时不带路径, 被引用执行时带路径 上面代码的意思是, 只有当前文件作为直接执行文件时, if 里的语句会被执行  题外话, python 越来越火了, 但是感觉写起来代码样子太丑(没有 end…),">
+<meta property="og:description" content="如何直接运行写的脚本文件 两种方式  shebang 1234# something you code in ruby#!usr/bin/env rubyputs &amp;apos;hello world&amp;apos;   1$ ./xxx.rb  path, 将写的文件复制到 /usr/local/bin 文件底下, 然后就可以直接使用脚本了  或者, 打开 /etc/paths, 把你脚本所在的文件夹">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-13T08:49:41.000Z">
+<meta property="og:updated_time" content="2017-12-19T07:29:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ruby 技巧 - $0 &amp; __FILE__">
-<meta name="twitter:description" content="经常在 ruby 脚本里看到123if $0 == __FILE__  xxxend 这样的句子, 不知道干嘛的, 解释如下  $0 表示用于启动程序的文件名 FILE 表示当前文件名, 被直接执行时不带路径, 被引用执行时带路径 上面代码的意思是, 只有当前文件作为直接执行文件时, if 里的语句会被执行  题外话, python 越来越火了, 但是感觉写起来代码样子太丑(没有 end…),">
+<meta name="twitter:title" content="如何直接运行写的脚本文件">
+<meta name="twitter:description" content="如何直接运行写的脚本文件 两种方式  shebang 1234# something you code in ruby#!usr/bin/env rubyputs &amp;apos;hello world&amp;apos;   1$ ./xxx.rb  path, 将写的文件复制到 /usr/local/bin 文件底下, 然后就可以直接使用脚本了  或者, 打开 /etc/paths, 把你脚本所在的文件夹">
   
     <link rel="alternative" href="/atom.xml" title="Luyakus の blog" type="application/atom+xml">
   
@@ -149,34 +149,37 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ruby-技巧-0-FILE" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-如何直接运行写的脚本文件" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      ruby 技巧 - $0 &amp; __FILE__
+      如何直接运行写的脚本文件
     </h1>
   
 
         
-        <a href="/2017/12/13/ruby-技巧-0-FILE/" class="archive-article-date">
-  	<time datetime="2017-12-13T08:29:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-13</time>
+        <a href="/2017/12/19/如何直接运行写的脚本文件/" class="archive-article-date">
+  	<time datetime="2017-12-19T07:23:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>经常在 ruby 脚本里看到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if $0 == __FILE__</span><br><span class="line">  xxx</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
-<p>这样的句子, 不知道干嘛的, 解释如下</p>
-<ol>
-<li>$0 表示用于启动程序的文件名</li>
-<li><strong>FILE</strong> 表示当前文件名, 被直接执行时不带路径, 被引用执行时带路径</li>
-<li>上面代码的意思是, 只有当前文件作为直接执行文件时, if 里的语句会被执行</li>
-</ol>
-<p>题外话, python 越来越火了, 但是感觉写起来代码样子太丑(没有 end…), 不如 ruby 美观<br>所以学了 ruby, 人工智能的热潮是赶不了了, 学习初衷是为了将编程能力扩展到其他的方面,<br>不局限在 iOS, 自己舒服就行</p>
+        <h2 id="如何直接运行写的脚本文件"><a href="#如何直接运行写的脚本文件" class="headerlink" title="如何直接运行写的脚本文件"></a>如何直接运行写的脚本文件</h2><ul>
+<li><p>两种方式</p>
+</li>
+<li><p>shebang</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># something you code in ruby</span><br><span class="line">#!usr/bin/env ruby</span><br><span class="line"></span><br><span class="line">puts &apos;hello world&apos;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./xxx.rb</span><br></pre></td></tr></table></figure>
+<ul>
+<li>path, 将写的文件复制到 /usr/local/bin 文件底下, 然后就可以直接使用脚本了 <br> 或者, 打开 /etc/paths, 把你脚本所在的文件夹路径写进去, 这样在这个文件夹中<br>的脚本就都可以直接运行了</li>
+</ul>
 
       
 
@@ -190,7 +193,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ruby</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技巧</a>
         		</li>
       		
 		</ul>
@@ -246,7 +249,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/12/13/ruby-技巧-0-FILE/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/12/19/如何直接运行写的脚本文件/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -260,18 +263,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/19/如何直接运行写的脚本文件/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          如何直接运行写的脚本文件
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/11/16/用-hexo-vscode-打造自己的博客客户端/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">用 hexo + vscode 打造自己的博客客户端</div>
+    <a href="/2017/12/13/ruby-技巧-0-FILE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ruby 技巧 - $0 &amp; __FILE__</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -298,7 +292,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#如何直接运行写的脚本文件"><span class="toc-number">1.</span> <span class="toc-text">如何直接运行写的脚本文件</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -323,7 +317,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2017/12/13/ruby-技巧-0-FILE/",
+  id: "http://yoursite.com/2017/12/19/如何直接运行写的脚本文件/",
   owner: 'Luyakus',
   repo: 'blog-comment',
   oauth: {
