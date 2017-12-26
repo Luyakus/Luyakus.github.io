@@ -171,21 +171,21 @@
 <li>假设 gt.a 与 ali.a 冲突, 我们决定把冲突的 .o 从 gt.a 中摘出来</li>
 <li>先查看 gt.a 是由哪些平台的包组成的</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; lipo -info gt.a</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ lipo -info gt.a</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>我们先处理 armv7 下的包, 先把它摘出来</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">  +shell</span><br><span class="line">&gt; lipo gt.a -thin armv7 -output armv7/gt-armv7.a</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ lipo gt.a -thin armv7 -output armv7/gt-armv7.a</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>把包解压, 会得到一堆 .o</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">armv7&gt; ar xv gt-armv7.a</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">armv7 $ ar xv gt-armv7.a</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>找到冲突的 .o 删除之, 最好这时候把 gt-armv7.a 也删除并且删除时要清空回收站, 要不然还会把删除的包打包进去</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">armv7&gt; ar rcs gt-armv7.a *.o</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">armv7 $ ar rcs gt-armv7.a *.o</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>将其他几个平台也按上述步骤操作</p>
 </li>
 <li><p>重新合并几个平台的包</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; lipo -create gt_armv7.a gt_armv7s.a gt_x86_64.a -output gt.a</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ lipo -create gt_armv7.a gt_armv7s.a gt_x86_64.a -output gt.a</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>把新生成的 .a 覆盖项目中的 .a 就行了</p>
 </li>
@@ -275,7 +275,7 @@
 <li><p>两种方式</p>
 </li>
 <li><p>shebang</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># something you code in ruby</span><br><span class="line">#!usr/bin/env ruby</span><br><span class="line"></span><br><span class="line">puts &apos;hello world&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># something you code in ruby</span></span><br><span class="line"><span class="comment">#!usr/bin/env ruby</span></span><br><span class="line"></span><br><span class="line">puts <span class="string">'hello world'</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./xxx.rb</span><br></pre></td></tr></table></figure>
@@ -355,7 +355,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>经常在 ruby 脚本里看到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if $0 == __FILE__</span><br><span class="line">  xxx</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
+        <p>经常在 ruby 脚本里看到<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> $0 == __FILE_<span class="number">_</span></span><br><span class="line">  xxx</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></p>
 <p>这样的句子, 不知道干嘛的, 解释如下</p>
 <ol>
 <li>$0 表示用于启动程序的文件名</li>
@@ -448,7 +448,7 @@
 <li>shift + cmd + p &gt; task &gt; 自定义task</li>
 <li>使用如下</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    // See https://go.microsoft.com/fwlink/?LinkId=733558</span><br><span class="line">    // for the documentation about the tasks.json format</span><br><span class="line">    &quot;version&quot;: &quot;2.0.0&quot;,</span><br><span class="line">    &quot;tasks&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;label&quot;: &quot;deploy&quot;,</span><br><span class="line">            &quot;type&quot;: &quot;shell&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;rm -rf ./blogs/* &amp;&amp;  mv -f ./scripts/public/* ./blogs/ &amp;&amp; cd ./blogs/ &amp;&amp; git add . &amp;&amp; git commit -m &apos;发布文章&apos; &amp;&amp; git push &quot;,</span><br><span class="line">            &quot;problemMatcher&quot;: []</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;label&quot;: &quot;generate&quot;,</span><br><span class="line">            &quot;type&quot;: &quot;shell&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;cd ./scripts/ &amp;&amp; hexo clean &amp;&amp; hexo generate&quot;,</span><br><span class="line">            &quot;problemMatcher&quot;: []</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    // See https://go.microsoft.com/fwlink/?LinkId=733558</span><br><span class="line">    // for the documentation about the tasks.json format</span><br><span class="line">    "version": "2.0.0",</span><br><span class="line">    "tasks": [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"label"</span>: <span class="string">"deploy"</span>,</span><br><span class="line">            <span class="attr">"type"</span>: <span class="string">"shell"</span>,</span><br><span class="line">            <span class="attr">"command"</span>: <span class="string">"rm -rf ./blogs/* &amp;&amp;  mv -f ./scripts/public/* ./blogs/ &amp;&amp; cd ./blogs/ &amp;&amp; git add . &amp;&amp; git commit -m '发布文章' &amp;&amp; git push "</span>,</span><br><span class="line">            <span class="attr">"problemMatcher"</span>: []</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"label"</span>: <span class="string">"generate"</span>,</span><br><span class="line">            <span class="attr">"type"</span>: <span class="string">"shell"</span>,</span><br><span class="line">            <span class="attr">"command"</span>: <span class="string">"cd ./scripts/ &amp;&amp; hexo clean &amp;&amp; hexo generate"</span>,</span><br><span class="line">            <span class="attr">"problemMatcher"</span>: []</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>使用 shift + cmd + b &gt; 配置任务 &gt; generate &gt; deploy</li>
 <li>抛砖引玉, 大家当然也可以自己定义其他强大的 task</li>

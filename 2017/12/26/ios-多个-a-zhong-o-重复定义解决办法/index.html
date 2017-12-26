@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>ios 多个 .a 中 .o 文件冲突解决办法 | Luyakus の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="由于 .a 会把引用一起打包, 所以当有多个 .a 的时候很有可能会有引用冲突, 也就是 .o 重复定义 假设 gt.a 与 ali.a 冲突, 我们决定把冲突的 .o 从 gt.a 中摘出来 先查看 gt.a 是由哪些平台的包组成的  1&amp;gt; lipo -info gt.a  我们先处理 armv7 下的">
+  <meta name="description" content="由于 .a 会把引用一起打包, 所以当有多个 .a 的时候很有可能会有引用冲突, 也就是 .o 重复定义 假设 gt.a 与 ali.a 冲突, 我们决定把冲突的 .o 从 gt.a 中摘出来 先查看 gt.a 是由哪些平台的包组成的  1$ lipo -info gt.a  我们先处理 armv7 下的包, 先把它摘">
 <meta name="keywords" content="技巧,iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ios 多个 .a 中 .o 文件冲突解决办法">
 <meta property="og:url" content="http://yoursite.com/2017/12/26/ios-多个-a-zhong-o-重复定义解决办法/index.html">
 <meta property="og:site_name" content="Luyakus の blog">
-<meta property="og:description" content="由于 .a 会把引用一起打包, 所以当有多个 .a 的时候很有可能会有引用冲突, 也就是 .o 重复定义 假设 gt.a 与 ali.a 冲突, 我们决定把冲突的 .o 从 gt.a 中摘出来 先查看 gt.a 是由哪些平台的包组成的  1&amp;gt; lipo -info gt.a  我们先处理 armv7 下的包, 先把它摘出来 12  +shell&amp;gt; lipo gt.a -thin ar">
+<meta property="og:description" content="由于 .a 会把引用一起打包, 所以当有多个 .a 的时候很有可能会有引用冲突, 也就是 .o 重复定义 假设 gt.a 与 ali.a 冲突, 我们决定把冲突的 .o 从 gt.a 中摘出来 先查看 gt.a 是由哪些平台的包组成的  1$ lipo -info gt.a  我们先处理 armv7 下的包, 先把它摘出来 1$ lipo gt.a -thin armv7 -output arm">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-26T08:28:52.000Z">
+<meta property="og:updated_time" content="2017-12-26T08:32:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ios 多个 .a 中 .o 文件冲突解决办法">
-<meta name="twitter:description" content="由于 .a 会把引用一起打包, 所以当有多个 .a 的时候很有可能会有引用冲突, 也就是 .o 重复定义 假设 gt.a 与 ali.a 冲突, 我们决定把冲突的 .o 从 gt.a 中摘出来 先查看 gt.a 是由哪些平台的包组成的  1&amp;gt; lipo -info gt.a  我们先处理 armv7 下的包, 先把它摘出来 12  +shell&amp;gt; lipo gt.a -thin ar">
+<meta name="twitter:description" content="由于 .a 会把引用一起打包, 所以当有多个 .a 的时候很有可能会有引用冲突, 也就是 .o 重复定义 假设 gt.a 与 ali.a 冲突, 我们决定把冲突的 .o 从 gt.a 中摘出来 先查看 gt.a 是由哪些平台的包组成的  1$ lipo -info gt.a  我们先处理 armv7 下的包, 先把它摘出来 1$ lipo gt.a -thin armv7 -output arm">
   
     <link rel="alternative" href="/atom.xml" title="Luyakus の blog" type="application/atom+xml">
   
@@ -174,21 +174,21 @@
 <li>假设 gt.a 与 ali.a 冲突, 我们决定把冲突的 .o 从 gt.a 中摘出来</li>
 <li>先查看 gt.a 是由哪些平台的包组成的</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; lipo -info gt.a</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ lipo -info gt.a</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>我们先处理 armv7 下的包, 先把它摘出来</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">  +shell</span><br><span class="line">&gt; lipo gt.a -thin armv7 -output armv7/gt-armv7.a</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ lipo gt.a -thin armv7 -output armv7/gt-armv7.a</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>把包解压, 会得到一堆 .o</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">armv7&gt; ar xv gt-armv7.a</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">armv7 $ ar xv gt-armv7.a</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>找到冲突的 .o 删除之, 最好这时候把 gt-armv7.a 也删除并且删除时要清空回收站, 要不然还会把删除的包打包进去</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">armv7&gt; ar rcs gt-armv7.a *.o</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">armv7 $ ar rcs gt-armv7.a *.o</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>将其他几个平台也按上述步骤操作</p>
 </li>
 <li><p>重新合并几个平台的包</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; lipo -create gt_armv7.a gt_armv7s.a gt_x86_64.a -output gt.a</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ lipo -create gt_armv7.a gt_armv7s.a gt_x86_64.a -output gt.a</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>把新生成的 .a 覆盖项目中的 .a 就行了</p>
 </li>
