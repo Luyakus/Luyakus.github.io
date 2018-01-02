@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>正则表达式 for iOSer | Luyakus の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="c . * ^ $ 是非常有用的匹配器，根据我在日常工作中使用正则表达式的经验，它可以轻松解 决95%的问题 – 代码之美   正则是字符串处理中绕不开的东西, 尽管 Cocoa 给我们提供了大量的字符串处理方法, 但是在在复杂文本中还是显得太原始, 好在先贤已经帮我们提供了解决方案, 只是需要我们学习下  可能有">
+  <meta name="description" content="c . * ^ $ 是非常有用的匹配器，根据我在日常工作中使用正则表达式的经验，它可以轻松解 决95%的问题 – &amp;lt;代码之美&amp;gt;   正则是字符串处理中绕不开的东西, 尽管 Cocoa 给我们提供了大量的字符串处理方法, 但是在在复杂文本中还是显得太原始, 好在先贤已经帮我们提供了解决方案">
 <meta name="keywords" content="教程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="正则表达式 for iOSer">
 <meta property="og:url" content="http://yoursite.com/2018/01/02/正则表达式-for-iOSer/index.html">
 <meta property="og:site_name" content="Luyakus の blog">
-<meta property="og:description" content="c . * ^ $ 是非常有用的匹配器，根据我在日常工作中使用正则表达式的经验，它可以轻松解 决95%的问题 – 代码之美   正则是字符串处理中绕不开的东西, 尽管 Cocoa 给我们提供了大量的字符串处理方法, 但是在在复杂文本中还是显得太原始, 好在先贤已经帮我们提供了解决方案, 只是需要我们学习下  可能有些小伙伴跟我一样对于正则有过多次 ‘入门’, 看了五分钟就看不下去了, 心想">
+<meta property="og:description" content="c . * ^ $ 是非常有用的匹配器，根据我在日常工作中使用正则表达式的经验，它可以轻松解 决95%的问题 – &amp;lt;代码之美&amp;gt;   正则是字符串处理中绕不开的东西, 尽管 Cocoa 给我们提供了大量的字符串处理方法, 但是在在复杂文本中还是显得太原始, 好在先贤已经帮我们提供了解决方案, 只是需要我们学习下  可能有些小伙伴跟我一样对于正则有过多次 ‘入门’, 看了五分钟就看">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-02T09:27:16.000Z">
+<meta property="og:updated_time" content="2018-01-02T09:32:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式 for iOSer">
-<meta name="twitter:description" content="c . * ^ $ 是非常有用的匹配器，根据我在日常工作中使用正则表达式的经验，它可以轻松解 决95%的问题 – 代码之美   正则是字符串处理中绕不开的东西, 尽管 Cocoa 给我们提供了大量的字符串处理方法, 但是在在复杂文本中还是显得太原始, 好在先贤已经帮我们提供了解决方案, 只是需要我们学习下  可能有些小伙伴跟我一样对于正则有过多次 ‘入门’, 看了五分钟就看不下去了, 心想">
+<meta name="twitter:description" content="c . * ^ $ 是非常有用的匹配器，根据我在日常工作中使用正则表达式的经验，它可以轻松解 决95%的问题 – &amp;lt;代码之美&amp;gt;   正则是字符串处理中绕不开的东西, 尽管 Cocoa 给我们提供了大量的字符串处理方法, 但是在在复杂文本中还是显得太原始, 好在先贤已经帮我们提供了解决方案, 只是需要我们学习下  可能有些小伙伴跟我一样对于正则有过多次 ‘入门’, 看了五分钟就看">
   
     <link rel="alternative" href="/atom.xml" title="Luyakus の blog" type="application/atom+xml">
   
@@ -170,7 +170,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>c . * ^ $ 是非常有用的匹配器，根据我在日常工作中使用正则表达式的经验，它可以轻松解 决95%的问题 – 代码之美</p>
+<p>c . * ^ $ 是非常有用的匹配器，根据我在日常工作中使用正则表达式的经验，它可以轻松解 决95%的问题 – &lt;代码之美&gt;</p>
 </blockquote>
 <ul>
 <li><p>正则是字符串处理中绕不开的东西, 尽管 Cocoa 给我们提供了大量的字符串处理方法, 但是在在复杂文本中还是显得太原始, 好在先贤已经帮我们提供了解决方案, 只是需要我们学习下</p>
@@ -185,16 +185,16 @@
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/a/ <span class="comment">#匹配 aaaaaaa, a</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>*表示匹配前表达式零次或多次, +表示匹配前表达式至少一次</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/abc*<span class="regexp">/ #匹配 abc, ab, abcab, abcabc</span></span><br><span class="line"><span class="regexp">/abc</span>+<span class="regexp">/ #匹配 abc, abcabc</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/abc*/ <span class="comment">#匹配 abc, ab, abcab, abcabc</span></span><br><span class="line">/abc+/ <span class="comment">#匹配 abc, abcabc</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>^表示匹配输入字符串开始的位置</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/^abc/ <span class="comment">#匹配 abcxxxx 开头的 abc</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/^abc/ <span class="comment">#匹配 abcxxxx 开头的 abc</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>$表示匹配输入字符串结束的位置</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/abc$/ <span class="comment">#匹配 xxxxabc 结尾的 abc</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/abc$/ <span class="comment">#匹配 xxxxabc 结尾的 abc</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>.表示匹配除了’\n’所有的单字符 </p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/ab.*<span class="regexp">/ #匹配 abxxxxxxxxxx, ab</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/ab.*/ <span class="comment">#匹配 abxxxxxxxxxx, ab</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="练习一下"><a href="#练习一下" class="headerlink" title="练习一下"></a>练习一下</h4><ul>
