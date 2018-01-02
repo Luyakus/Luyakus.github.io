@@ -9,14 +9,14 @@
   <title>ios 多个 .a 中 .o 文件冲突解决办法 | Luyakus の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="由于 .a 会把引用一起打包, 所以当有多个 .a 的时候很有可能会有引用冲突, 也就是 .o 重复定义 假设 gt.a 与 ali.a 冲突, 我们决定把冲突的 .o 从 gt.a 中摘出来 先查看 gt.a 是由哪些平台的包组成的  1$ lipo -info gt.a  我们先处理 armv7 下的包, 先把它摘">
-<meta name="keywords" content="技巧,iOS">
+<meta name="keywords" content="技巧,iOS,ruby">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ios 多个 .a 中 .o 文件冲突解决办法">
 <meta property="og:url" content="http://yoursite.com/2017/12/26/ios-多个-a-zhong-o-重复定义解决办法/index.html">
 <meta property="og:site_name" content="Luyakus の blog">
 <meta property="og:description" content="由于 .a 会把引用一起打包, 所以当有多个 .a 的时候很有可能会有引用冲突, 也就是 .o 重复定义 假设 gt.a 与 ali.a 冲突, 我们决定把冲突的 .o 从 gt.a 中摘出来 先查看 gt.a 是由哪些平台的包组成的  1$ lipo -info gt.a  我们先处理 armv7 下的包, 先把它摘出来 1$ lipo gt.a -thin armv7 -output arm">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-26T08:32:40.000Z">
+<meta property="og:updated_time" content="2017-12-26T08:34:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ios 多个 .a 中 .o 文件冲突解决办法">
 <meta name="twitter:description" content="由于 .a 会把引用一起打包, 所以当有多个 .a 的时候很有可能会有引用冲突, 也就是 .o 重复定义 假设 gt.a 与 ali.a 冲突, 我们决定把冲突的 .o 从 gt.a 中摘出来 先查看 gt.a 是由哪些平台的包组成的  1$ lipo -info gt.a  我们先处理 armv7 下的包, 先把它摘出来 1$ lipo gt.a -thin armv7 -output arm">
@@ -216,6 +216,10 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ruby</a>
+        		</li>
       		
 		</ul>
 	</div>
@@ -283,6 +287,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/01/02/css-选择器/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          css 选择器
+        
+      </div>
+    </a>
   
   
     <a href="/2017/12/19/如何直接运行写的脚本文件/" id="article-nav-older" class="article-nav-link-wrap">
@@ -358,7 +371,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Luyakus
+    		&copy; 2018 Luyakus
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -446,6 +459,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ruby</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">教程</a>
               </li>
              
               <li class="article-tag-list-item">

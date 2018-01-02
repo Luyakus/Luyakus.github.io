@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>用 hexo + vscode 打造自己的博客客户端 | Luyakus の blog</title>
+  <title>css 选择器 | Luyakus の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="使用 hexo 遇到的问题hexo deploy 的时候使用的是 git 的方式, 也安装了 git deployer, 还是报错1Deployer not found: git 无奈只有人肉 push 到 git 上 vscode 可以做什么经过思考, 可以通过 vscode 建立自定义 task 的方式, 实现自动">
-<meta name="keywords" content="技巧,vscode">
+  <meta name="description" content="挖坑回头再填, hia, hia, hia">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用 hexo + vscode 打造自己的博客客户端">
-<meta property="og:url" content="http://yoursite.com/2017/11/16/用-hexo-vscode-打造自己的博客客户端/index.html">
+<meta property="og:title" content="css 选择器">
+<meta property="og:url" content="http://yoursite.com/2018/01/02/css-选择器/index.html">
 <meta property="og:site_name" content="Luyakus の blog">
-<meta property="og:description" content="使用 hexo 遇到的问题hexo deploy 的时候使用的是 git 的方式, 也安装了 git deployer, 还是报错1Deployer not found: git 无奈只有人肉 push 到 git 上 vscode 可以做什么经过思考, 可以通过 vscode 建立自定义 task 的方式, 实现自动发布  建立如下文件夹  123ABC // 名字随意 |_____blogs">
+<meta property="og:description" content="挖坑回头再填, hia, hia, hia">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-26T08:31:42.000Z">
+<meta property="og:updated_time" content="2018-01-02T09:23:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用 hexo + vscode 打造自己的博客客户端">
-<meta name="twitter:description" content="使用 hexo 遇到的问题hexo deploy 的时候使用的是 git 的方式, 也安装了 git deployer, 还是报错1Deployer not found: git 无奈只有人肉 push 到 git 上 vscode 可以做什么经过思考, 可以通过 vscode 建立自定义 task 的方式, 实现自动发布  建立如下文件夹  123ABC // 名字随意 |_____blogs">
+<meta name="twitter:title" content="css 选择器">
+<meta name="twitter:description" content="挖坑回头再填, hia, hia, hia">
   
     <link rel="alternative" href="/atom.xml" title="Luyakus の blog" type="application/atom+xml">
   
@@ -149,44 +148,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-用-hexo-vscode-打造自己的博客客户端" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-css-选择器" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      用 hexo + vscode 打造自己的博客客户端
+      css 选择器
     </h1>
   
 
         
-        <a href="/2017/11/16/用-hexo-vscode-打造自己的博客客户端/" class="archive-article-date">
-  	<time datetime="2017-11-16T09:18:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-16</time>
+        <a href="/2018/01/02/css-选择器/" class="archive-article-date">
+  	<time datetime="2018-01-02T08:16:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="使用-hexo-遇到的问题"><a href="#使用-hexo-遇到的问题" class="headerlink" title="使用 hexo 遇到的问题"></a>使用 hexo 遇到的问题</h2><p>hexo deploy 的时候使用的是 git 的方式, 也安装了 git deployer, 还是报错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Deployer not found: git</span><br></pre></td></tr></table></figure></p>
-<p>无奈只有人肉 push 到 git 上</p>
-<h2 id="vscode-可以做什么"><a href="#vscode-可以做什么" class="headerlink" title="vscode 可以做什么"></a>vscode 可以做什么</h2><p>经过思考, 可以通过 vscode 建立自定义 task 的方式, 实现自动发布</p>
-<ul>
-<li>建立如下文件夹</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ABC // 名字随意</span><br><span class="line"> |_____blogs</span><br><span class="line"> |_____scripts</span><br></pre></td></tr></table></figure>
-<ul>
-<li>blogs 是实际要发布的文件, scripts 里 是 hexo init 生成的文件</li>
-<li>shift + cmd + p &gt; task &gt; 自定义task</li>
-<li>使用如下</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    // See https://go.microsoft.com/fwlink/?LinkId=733558</span><br><span class="line">    // for the documentation about the tasks.json format</span><br><span class="line">    "version": "2.0.0",</span><br><span class="line">    "tasks": [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"label"</span>: <span class="string">"deploy"</span>,</span><br><span class="line">            <span class="attr">"type"</span>: <span class="string">"shell"</span>,</span><br><span class="line">            <span class="attr">"command"</span>: <span class="string">"rm -rf ./blogs/* &amp;&amp;  mv -f ./scripts/public/* ./blogs/ &amp;&amp; cd ./blogs/ &amp;&amp; git add . &amp;&amp; git commit -m '发布文章' &amp;&amp; git push "</span>,</span><br><span class="line">            <span class="attr">"problemMatcher"</span>: []</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"label"</span>: <span class="string">"generate"</span>,</span><br><span class="line">            <span class="attr">"type"</span>: <span class="string">"shell"</span>,</span><br><span class="line">            <span class="attr">"command"</span>: <span class="string">"cd ./scripts/ &amp;&amp; hexo clean &amp;&amp; hexo generate"</span>,</span><br><span class="line">            <span class="attr">"problemMatcher"</span>: []</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>使用 shift + cmd + b &gt; 配置任务 &gt; generate &gt; deploy</li>
-<li>抛砖引玉, 大家当然也可以自己定义其他强大的 task</li>
-</ul>
-
+        <h3 id="挖坑回头再填-hia-hia-hia"><a href="#挖坑回头再填-hia-hia-hia" class="headerlink" title="挖坑回头再填, hia, hia, hia"></a>挖坑回头再填, hia, hia, hia</h3>
       
 
       
@@ -194,21 +176,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技巧</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">vscode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -259,7 +226,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/11/16/用-hexo-vscode-打造自己的博客客户端/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/01/02/css-选择器/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -273,15 +240,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/13/ruby-技巧-0-FILE/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/01/02/正则表达式-for-iOSer/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          ruby 技巧 - $0 &amp; __FILE__
+          正则表达式 for iOSer
         
       </div>
     </a>
   
+  
+    <a href="/2017/12/26/ios-多个-a-zhong-o-重复定义解决办法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ios 多个 .a 中 .o 文件冲突解决办法</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -306,7 +278,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-hexo-遇到的问题"><span class="toc-number">1.</span> <span class="toc-text">使用 hexo 遇到的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vscode-可以做什么"><span class="toc-number">2.</span> <span class="toc-text">vscode 可以做什么</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#挖坑回头再填-hia-hia-hia"><span class="toc-number">1.</span> <span class="toc-text">挖坑回头再填, hia, hia, hia</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -331,7 +303,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2017/11/16/用-hexo-vscode-打造自己的博客客户端/",
+  id: "http://yoursite.com/2018/01/02/css-选择器/",
   owner: 'Luyakus',
   repo: 'blog-comment',
   oauth: {
