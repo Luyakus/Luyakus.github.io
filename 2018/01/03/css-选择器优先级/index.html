@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>正则表达式 for iOSer | Luyakus の blog</title>
+  <title>css 选择器优先级 | Luyakus の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="c . * ^ $ 是非常有用的匹配器，根据我在日常工作中使用正则表达式的经验，它可以轻松解 决95%的问题 – &amp;lt;代码之美&amp;gt;   正则是字符串处理中绕不开的东西, 尽管 Cocoa 给我们提供了大量的字符串处理方法, 但是在在复杂文本中还是显得太原始, 好在先贤已经帮我们提供了解决方案">
+  <meta name="description" content="对选择器不了解的小伙伴可以看之前这篇css 选择器正文 id选择器优先级很高，权值为100 class、属性和伪类选择器的权值为10 标签选择器权值为1 在比较样式的优先级时，只需统计选择符中的id、class和标签名的个数，然后把相应的权值相加即可，最后根据结果排出优先级 权值较大的优先级越高 权值相同的，后定义的优">
 <meta name="keywords" content="教程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="正则表达式 for iOSer">
-<meta property="og:url" content="http://yoursite.com/2018/01/02/正则表达式-for-iOSer/index.html">
+<meta property="og:title" content="css 选择器优先级">
+<meta property="og:url" content="http://yoursite.com/2018/01/03/css-选择器优先级/index.html">
 <meta property="og:site_name" content="Luyakus の blog">
-<meta property="og:description" content="c . * ^ $ 是非常有用的匹配器，根据我在日常工作中使用正则表达式的经验，它可以轻松解 决95%的问题 – &amp;lt;代码之美&amp;gt;   正则是字符串处理中绕不开的东西, 尽管 Cocoa 给我们提供了大量的字符串处理方法, 但是在在复杂文本中还是显得太原始, 好在先贤已经帮我们提供了解决方案, 只是需要我们学习下  可能有些小伙伴跟我一样对于正则有过多次 ‘入门’, 看了五分钟就看">
+<meta property="og:description" content="对选择器不了解的小伙伴可以看之前这篇css 选择器正文 id选择器优先级很高，权值为100 class、属性和伪类选择器的权值为10 标签选择器权值为1 在比较样式的优先级时，只需统计选择符中的id、class和标签名的个数，然后把相应的权值相加即可，最后根据结果排出优先级 权值较大的优先级越高 权值相同的，后定义的优先级较高 样式值含有！important，优先级最高 12div .class">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-02T09:32:33.000Z">
+<meta property="og:updated_time" content="2018-01-03T08:57:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="正则表达式 for iOSer">
-<meta name="twitter:description" content="c . * ^ $ 是非常有用的匹配器，根据我在日常工作中使用正则表达式的经验，它可以轻松解 决95%的问题 – &amp;lt;代码之美&amp;gt;   正则是字符串处理中绕不开的东西, 尽管 Cocoa 给我们提供了大量的字符串处理方法, 但是在在复杂文本中还是显得太原始, 好在先贤已经帮我们提供了解决方案, 只是需要我们学习下  可能有些小伙伴跟我一样对于正则有过多次 ‘入门’, 看了五分钟就看">
+<meta name="twitter:title" content="css 选择器优先级">
+<meta name="twitter:description" content="对选择器不了解的小伙伴可以看之前这篇css 选择器正文 id选择器优先级很高，权值为100 class、属性和伪类选择器的权值为10 标签选择器权值为1 在比较样式的优先级时，只需统计选择符中的id、class和标签名的个数，然后把相应的权值相加即可，最后根据结果排出优先级 权值较大的优先级越高 权值相同的，后定义的优先级较高 样式值含有！important，优先级最高 12div .class">
   
     <link rel="alternative" href="/atom.xml" title="Luyakus の blog" type="application/atom+xml">
   
@@ -149,85 +149,41 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-正则表达式-for-iOSer" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-css-选择器优先级" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      正则表达式 for iOSer
+      css 选择器优先级
     </h1>
   
 
         
-        <a href="/2018/01/02/正则表达式-for-iOSer/" class="archive-article-date">
-  	<time datetime="2018-01-02T08:18:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-02</time>
+        <a href="/2018/01/03/css-选择器优先级/" class="archive-article-date">
+  	<time datetime="2018-01-03T08:41:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>c . * ^ $ 是非常有用的匹配器，根据我在日常工作中使用正则表达式的经验，它可以轻松解 决95%的问题 – &lt;代码之美&gt;</p>
-</blockquote>
-<ul>
-<li><p>正则是字符串处理中绕不开的东西, 尽管 Cocoa 给我们提供了大量的字符串处理方法, 但是在在复杂文本中还是显得太原始, 好在先贤已经帮我们提供了解决方案, 只是需要我们学习下</p>
+        <ul>
+<li>对选择器不了解的小伙伴可以看之前这篇<a href="https://luyakus.github.io/2018/01/02/css-%E9%80%89%E6%8B%A9%E5%99%A8/" target="_blank" rel="noopener">css 选择器</a><h4 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h4></li>
+<li>id选择器优先级很高，权值为100</li>
+<li>class、属性和伪类选择器的权值为10</li>
+<li>标签选择器权值为1</li>
+<li>在比较样式的优先级时，只需统计选择符中的id、class和标签名的个数，然后把相应的权值相加即可，最后根据结果排出优先级</li>
+<li>权值较大的优先级越高</li>
+<li>权值相同的，后定义的优先级较高</li>
+<li><p>样式值含有！important，优先级最高</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">div .class1 #people //权值等于1+10+100=111</span><br><span class="line">.class2 li #age //权值等于10+1+100=111</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>可能有些小伙伴跟我一样对于正则有过多次 ‘入门’, 看了五分钟就看不下去了, 心想 WTF, 实际上可能是没有具体的问题需要你去解决, 当开发中有个问题需要用正则来解决的时候, 就会静下心学了, 我们不需要精通它, 只需要理解基本规则, 为我所用即可, 不夸张的说, 只需要半天,就可以基本掌握并解决你的问题了</p>
+<li><p>后代选择器的定位原则: 在这里介绍一下对于后代选择器，浏览器是如何查找元素的呢？浏览器CSS匹配不是从左到右进行查找，而是从右到左进行查找。</p>
 </li>
-<li><p>ps 一下代码均为 Ruby 代码, OC 中正则不需要 / 开头和 / 结尾</p>
-</li>
-</ul>
-<h4 id="基本规则"><a href="#基本规则" class="headerlink" title="基本规则"></a>基本规则</h4><ul>
-<li><p>一对一, 即一个字符匹配一个字符, 可以多次匹配</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/a/ <span class="comment">#匹配 aaaaaaa, a</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>*表示匹配前表达式零次或多次, +表示匹配前表达式至少一次</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/abc*/ <span class="comment">#匹配 abc, ab, abcab, abcabc</span></span><br><span class="line">/abc+/ <span class="comment">#匹配 abc, abcabc</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>^表示匹配输入字符串开始的位置</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/^abc/ <span class="comment">#匹配 abcxxxx 开头的 abc</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>$表示匹配输入字符串结束的位置</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/abc$/ <span class="comment">#匹配 xxxxabc 结尾的 abc</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>.表示匹配除了’\n’所有的单字符 </p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/ab.*/ <span class="comment">#匹配 abxxxxxxxxxx, ab</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="练习一下"><a href="#练习一下" class="headerlink" title="练习一下"></a>练习一下</h4><ul>
-<li><p>下面是一个匹配手机号的正则</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/<span class="number">0</span>?(<span class="number">13</span><span class="params">|14|</span><span class="number">15</span><span class="params">|17|</span><span class="number">18</span>)[<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">9</span>&#125;/</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>从简单的说起 [0-9] 表示匹配 0-9 中的任一数字, {9} 表示前面的表达式即 [0-9] 要匹配9次</p>
-</li>
-<li>(13|14|15|17|19) 表示一个组, 组中的选项是 或(|) 的关系</li>
-<li>0? 表示数字0出现最多一次</li>
-<li>那么这个表达式的含义是 找一串文字, 可能以 0 开头, 紧跟 13 或 14 或 15 或 17 或 18, 同时以9个数字结尾, 数字必须在 0-9 范围内</li>
-<li>是不是没有想的那么难</li>
-</ul>
-<h4 id="干货分享"><a href="#干货分享" class="headerlink" title="干货分享"></a>干货分享</h4><ul>
-<li><p>不擅长写长文章, 简单给大家介绍到这里了, 有一些学习中积累的好网站分享给大家</p>
-</li>
-<li><p>正则图形化解析</p>
-<blockquote>
-<p><a href="https://jex.im/regulex/" target="_blank" rel="noopener">https://jex.im/regulex/</a></p>
-</blockquote>
-</li>
-<li><p>正则入门</p>
-<blockquote>
-<p><a href="http://www.runoob.com/regexp/regexp-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/regexp/regexp-tutorial.html</a></p>
-</blockquote>
-</li>
-<li><p>正则在线匹配测试</p>
-<blockquote>
-<p><a href="http://www.ofmonkey.com/regex/test" target="_blank" rel="noopener">http://www.ofmonkey.com/regex/test</a></p>
-</blockquote>
-</li>
-<li><p>最后如果有即喜欢 iOS 也喜欢 Ruby 的小伙伴可以留言啊, 大家一起交流</p>
-</li>
+<li>比如DIV#divBox p span.red{color:red;}，浏览器的查找顺序如下：先查找html中所有class=’red’的span元素，找到后，再查找其父辈元素中是否有p元素，再判断p的父元素中是否有id为divBox的div元素，如果都存在则匹配上。</li>
+<li>浏览器从右到左进行查找的好处是为了尽早过滤掉一些无关的样式规则和元素。</li>
 </ul>
 
       
@@ -298,7 +254,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/01/02/正则表达式-for-iOSer/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/01/03/css-选择器优先级/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -312,18 +268,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/01/03/css-选择器优先级/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          css 选择器优先级
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/01/02/css-选择器/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">css 选择器</div>
+    <a href="/2018/01/02/正则表达式-for-iOSer/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">正则表达式 for iOSer</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -350,7 +297,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本规则"><span class="toc-number">1.</span> <span class="toc-text">基本规则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#练习一下"><span class="toc-number">2.</span> <span class="toc-text">练习一下</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#干货分享"><span class="toc-number">3.</span> <span class="toc-text">干货分享</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#正文"><span class="toc-number">1.</span> <span class="toc-text">正文</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -375,7 +322,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2018/01/02/正则表达式-for-iOSer/",
+  id: "http://yoursite.com/2018/01/03/css-选择器优先级/",
   owner: 'Luyakus',
   repo: 'blog-comment',
   oauth: {

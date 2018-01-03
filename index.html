@@ -146,6 +146,95 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-css-选择器优先级" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/03/css-选择器优先级/">css 选择器优先级</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/03/css-选择器优先级/" class="archive-article-date">
+  	<time datetime="2018-01-03T08:41:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>对选择器不了解的小伙伴可以看之前这篇<a href="https://luyakus.github.io/2018/01/02/css-%E9%80%89%E6%8B%A9%E5%99%A8/" target="_blank" rel="noopener">css 选择器</a><h4 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h4></li>
+<li>id选择器优先级很高，权值为100</li>
+<li>class、属性和伪类选择器的权值为10</li>
+<li>标签选择器权值为1</li>
+<li>在比较样式的优先级时，只需统计选择符中的id、class和标签名的个数，然后把相应的权值相加即可，最后根据结果排出优先级</li>
+<li>权值较大的优先级越高</li>
+<li>权值相同的，后定义的优先级较高</li>
+<li><p>样式值含有！important，优先级最高</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">div .class1 #people //权值等于1+10+100=111</span><br><span class="line">.class2 li #age //权值等于10+1+100=111</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>后代选择器的定位原则: 在这里介绍一下对于后代选择器，浏览器是如何查找元素的呢？浏览器CSS匹配不是从左到右进行查找，而是从右到左进行查找。</p>
+</li>
+<li>比如DIV#divBox p span.red{color:red;}，浏览器的查找顺序如下：先查找html中所有class=’red’的span元素，找到后，再查找其父辈元素中是否有p元素，再判断p的父元素中是否有id为divBox的div元素，如果都存在则匹配上。</li>
+<li>浏览器从右到左进行查找的好处是为了尽早过滤掉一些无关的样式规则和元素。</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/03/css-选择器优先级/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-正则表达式-for-iOSer" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -364,7 +453,7 @@
 </li>
 </ul>
 <h4 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h4><ul>
-<li><p>当与伪类选择器结合使用时一定要要注意空格, 下面两种选择器选择的是不同的内容</p>
+<li><p>当选择器结合使用时一定要要注意空格, 下面两种选择器选择的是不同的内容</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:first-child</span> &#123;&#125;</span><br><span class="line"><span class="selector-tag">div</span> <span class="selector-pseudo">:first-child</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>通过组合 css 选择器可以灵活快速的提取网页中想要的内容, 与正则结合使用效果更佳</p>
@@ -372,7 +461,7 @@
 <li><p>关于 css 选择器的实际作用可以看这个问题 <a href="https://stackoverflow.com/questions/21856799/nokogiri-mechanize-css-selector-by-text" target="_blank" rel="noopener">nokogiri + mechanize css selector by text
 </a></p>
 </li>
-<li><p>关于 css 选择器还有优先级的问题, 后续补上</p>
+<li><p>关于 css 选择器还有<a href="">优先级</a>问题, 欢迎留言</p>
 </li>
 </ul>
 

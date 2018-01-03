@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Luyakus の blog">
 <meta property="og:description" content="起源 用 ruby 的 nokogiri(看名字就是日语音译啊)解析网页的时候, 发现给了两种选择器: xpath, css-selector, xpath 看了看不对口味, 就学习 css-selector 吧 ps 本文基本摘自阮一峰老师的博客, 本来想自己写的, 网上搜资料, 看到这篇, 觉得再写也写不了这么好, 做了一些小小的勘误, 原文地址CSS选择器笔记  正文基本选择器 *">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-03T07:12:39.000Z">
+<meta property="og:updated_time" content="2018-01-03T08:59:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css 选择器">
 <meta name="twitter:description" content="起源 用 ruby 的 nokogiri(看名字就是日语音译啊)解析网页的时候, 发现给了两种选择器: xpath, css-selector, xpath 看了看不对口味, 就学习 css-selector 吧 ps 本文基本摘自阮一峰老师的博客, 本来想自己写的, 网上搜资料, 看到这篇, 觉得再写也写不了这么好, 做了一些小小的勘误, 原文地址CSS选择器笔记  正文基本选择器 *">
@@ -234,7 +234,7 @@
 </li>
 </ul>
 <h4 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h4><ul>
-<li><p>当与伪类选择器结合使用时一定要要注意空格, 下面两种选择器选择的是不同的内容</p>
+<li><p>当选择器结合使用时一定要要注意空格, 下面两种选择器选择的是不同的内容</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:first-child</span> &#123;&#125;</span><br><span class="line"><span class="selector-tag">div</span> <span class="selector-pseudo">:first-child</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>通过组合 css 选择器可以灵活快速的提取网页中想要的内容, 与正则结合使用效果更佳</p>
@@ -242,7 +242,7 @@
 <li><p>关于 css 选择器的实际作用可以看这个问题 <a href="https://stackoverflow.com/questions/21856799/nokogiri-mechanize-css-selector-by-text" target="_blank" rel="noopener">nokogiri + mechanize css selector by text
 </a></p>
 </li>
-<li><p>关于 css 选择器还有优先级的问题, 后续补上</p>
+<li><p>关于 css 选择器还有<a href="">优先级</a>问题, 欢迎留言</p>
 </li>
 </ul>
 
