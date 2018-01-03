@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>css 选择器优先级 | Luyakus の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="对选择器不了解的小伙伴可以看之前这篇css 选择器正文 id选择器优先级很高，权值为100 class、属性和伪类选择器的权值为10 标签选择器权值为1 在比较样式的优先级时，只需统计选择符中的id、class和标签名的个数，然后把相应的权值相加即可，最后根据结果排出优先级 权值较大的优先级越高 权值相同的，后定义的优">
+  <meta name="description" content="对选择器不了解的小伙伴可以看之前这篇css 选择器正文 id选择器优先级很高,权值为100 class,属性和伪类选择器的权值为10 标签选择器权值为1 在比较样式的优先级时,只需统计选择符中的id,class和标签名的个数,然后把相应的权值相加即可,最后根据结果排出优先级 权值较大的优先级越高 权值相同的,后定义的优">
 <meta name="keywords" content="教程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="css 选择器优先级">
 <meta property="og:url" content="http://yoursite.com/2018/01/03/css-选择器优先级/index.html">
 <meta property="og:site_name" content="Luyakus の blog">
-<meta property="og:description" content="对选择器不了解的小伙伴可以看之前这篇css 选择器正文 id选择器优先级很高，权值为100 class、属性和伪类选择器的权值为10 标签选择器权值为1 在比较样式的优先级时，只需统计选择符中的id、class和标签名的个数，然后把相应的权值相加即可，最后根据结果排出优先级 权值较大的优先级越高 权值相同的，后定义的优先级较高 样式值含有！important，优先级最高 12div .class">
+<meta property="og:description" content="对选择器不了解的小伙伴可以看之前这篇css 选择器正文 id选择器优先级很高,权值为100 class,属性和伪类选择器的权值为10 标签选择器权值为1 在比较样式的优先级时,只需统计选择符中的id,class和标签名的个数,然后把相应的权值相加即可,最后根据结果排出优先级 权值较大的优先级越高 权值相同的,后定义的优先级较高 样式值含有!important,优先级最高 12div .class">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-03T08:57:21.000Z">
+<meta property="og:updated_time" content="2018-01-03T09:05:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css 选择器优先级">
-<meta name="twitter:description" content="对选择器不了解的小伙伴可以看之前这篇css 选择器正文 id选择器优先级很高，权值为100 class、属性和伪类选择器的权值为10 标签选择器权值为1 在比较样式的优先级时，只需统计选择符中的id、class和标签名的个数，然后把相应的权值相加即可，最后根据结果排出优先级 权值较大的优先级越高 权值相同的，后定义的优先级较高 样式值含有！important，优先级最高 12div .class">
+<meta name="twitter:description" content="对选择器不了解的小伙伴可以看之前这篇css 选择器正文 id选择器优先级很高,权值为100 class,属性和伪类选择器的权值为10 标签选择器权值为1 在比较样式的优先级时,只需统计选择符中的id,class和标签名的个数,然后把相应的权值相加即可,最后根据结果排出优先级 权值较大的优先级越高 权值相同的,后定义的优先级较高 样式值含有!important,优先级最高 12div .class">
   
     <link rel="alternative" href="/atom.xml" title="Luyakus の blog" type="application/atom+xml">
   
@@ -171,18 +171,18 @@
       
         <ul>
 <li>对选择器不了解的小伙伴可以看之前这篇<a href="https://luyakus.github.io/2018/01/02/css-%E9%80%89%E6%8B%A9%E5%99%A8/" target="_blank" rel="noopener">css 选择器</a><h4 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h4></li>
-<li>id选择器优先级很高，权值为100</li>
-<li>class、属性和伪类选择器的权值为10</li>
+<li>id选择器优先级很高,权值为100</li>
+<li>class,属性和伪类选择器的权值为10</li>
 <li>标签选择器权值为1</li>
-<li>在比较样式的优先级时，只需统计选择符中的id、class和标签名的个数，然后把相应的权值相加即可，最后根据结果排出优先级</li>
+<li>在比较样式的优先级时,只需统计选择符中的id,class和标签名的个数,然后把相应的权值相加即可,最后根据结果排出优先级</li>
 <li>权值较大的优先级越高</li>
-<li>权值相同的，后定义的优先级较高</li>
-<li><p>样式值含有！important，优先级最高</p>
+<li>权值相同的,后定义的优先级较高</li>
+<li><p>样式值含有!important,优先级最高</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">div .class1 #people //权值等于1+10+100=111</span><br><span class="line">.class2 li #age //权值等于10+1+100=111</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>后代选择器的定位原则: 在这里介绍一下对于后代选择器，浏览器是如何查找元素的呢？浏览器CSS匹配不是从左到右进行查找，而是从右到左进行查找。</p>
+<li><p>后代选择器的定位原则:在这里介绍一下对于后代选择器,浏览器是如何查找元素的呢?浏览器CSS匹配不是从左到右进行查找,而是从右到左进行查找。</p>
 </li>
-<li>比如DIV#divBox p span.red{color:red;}，浏览器的查找顺序如下：先查找html中所有class=’red’的span元素，找到后，再查找其父辈元素中是否有p元素，再判断p的父元素中是否有id为divBox的div元素，如果都存在则匹配上。</li>
+<li>比如 div#divBox p span.red{color:red;}, 浏览器的查找顺序如下: 先查找html中所有 class=’red’ 的span元素,找到后,再查找其父辈元素中是否有p元素,再判断p的父元素中是否有id为divBox的div元素,如果都存在则匹配上.</li>
 <li>浏览器从右到左进行查找的好处是为了尽早过滤掉一些无关的样式规则和元素。</li>
 </ul>
 
