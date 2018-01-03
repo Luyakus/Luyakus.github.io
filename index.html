@@ -57,7 +57,7 @@
 	        
 				<li><a href="/tags/技巧/">技巧</a></li>
 	        
-				<li><a href="/tags/vscode/">vscode</a></li>
+				<li><a href="/tags/教程/">教程</a></li>
 	        
 				<li><a href="/tags/ruby/">ruby</a></li>
 	        
@@ -127,7 +127,7 @@
 		        
 					<li style="width: 25%"><a href="/tags/技巧/">技巧</a></li>
 		        
-					<li style="width: 25%"><a href="/tags/vscode/">vscode</a></li>
+					<li style="width: 25%"><a href="/tags/教程/">教程</a></li>
 		        
 					<li style="width: 25%"><a href="/tags/ruby/">ruby</a></li>
 		        
@@ -299,7 +299,83 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="挖坑回头再填-hia-hia-hia"><a href="#挖坑回头再填-hia-hia-hia" class="headerlink" title="挖坑回头再填, hia, hia, hia"></a>挖坑回头再填, hia, hia, hia</h3>
+        <h4 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h4><ul>
+<li>用 ruby 的 nokogiri(看名字就是日语音译啊)解析网页的时候, 发现给了两种选择器: xpath, css-selector, xpath 看了看不对口味, 就学习 css-selector 吧</li>
+<li>ps 本文基本摘自阮一峰老师的博客, 本来想自己写的, 网上搜资料, 看到这篇, 觉得再写也写不了这么好, 做了一些小小的勘误, 原文地址<a href="http://www.ruanyifeng.com/blog/2009/03/css_selectors.html" target="_blank" rel="noopener">CSS选择器笔记</a></li>
+</ul>
+<h4 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h4><h4 id="基本选择器"><a href="#基本选择器" class="headerlink" title="基本选择器"></a>基本选择器</h4><ul>
+<li>* 通用元素选择器, 匹配任何元素</li>
+<li>E 标签选择器, 匹配所有使用 E 标签的元素</li>
+<li>.info class 元素选择器, 匹配所有 class 属性中包含 info 的元素</li>
+<li># id 选择器, 匹配所有 id = footer 的元素<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">* &#123; <span class="attribute">margin</span>:<span class="number">0</span>; <span class="attribute">padding</span>:<span class="number">0</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">font-size</span>:<span class="number">2em</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.info</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-class">.info</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-class">.info</span><span class="selector-class">.error</span> &#123; </span><br><span class="line">    <span class="attribute">color</span>:<span class="number">#900</span>; </span><br><span class="line">    <span class="attribute">font-weight</span>:bold; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#info</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-id">#info</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="多元素的组合选择器"><a href="#多元素的组合选择器" class="headerlink" title="多元素的组合选择器"></a>多元素的组合选择器</h4><ul>
+<li>E, F 多元素选择器, 同时匹配所有的 E, F 元素, 元素间用逗号分割</li>
+<li>E F 后代元素选择器, 匹配所有属于 E 元素后代的 F 元素, E 和 F 之间用空格分离</li>
+<li>E &gt; F 子元素选择器, 匹配所有属于 E 元素后代的 F 元素</li>
+<li>E + F 毗邻元素选择器, 匹配所有紧跟 E 元素之后的同级元素 F</li>
+<li>E ~ F 匹配任何在 E 元素之后的同级 F 元素</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">p</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#nav</span> <span class="selector-tag">li</span> &#123; <span class="attribute">display</span>:inline; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#nav</span> <span class="selector-tag">a</span> &#123; <span class="attribute">font-weight</span>:bold; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span> &gt; <span class="selector-tag">strong</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span> + <span class="selector-tag">p</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span> ~ <span class="selector-tag">ul</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h4><ul>
+<li>E[att] 匹配所有具有 att 属性的元素, 不考虑它的值, E 在此处可以省略</li>
+<li>E[att=val] 匹配所有 att 属性等于 val 的 E 元素</li>
+<li>E[att~=val] 匹配所有 att 属性具有多个空格分隔的值、其中一个值等于”val”的E元素</li>
+<li>E[att|=val] 匹配所有att属性具有多个连字号分隔（hyphen-separated）的值、其中一个值以”val”开头的E元素，主要用于lang属性，比如”en”、”en-us”、”en-gb”等等</li>
+<li>E[att^=val] 属性值以 val 开头的元素</li>
+<li>E[att$=val] 属性值以 val 结尾的元素</li>
+<li>E[att*=val] 属性值 att 的值包含 val 字符串的元素<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-attr">[title]</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-attr">[class=error]</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">td</span><span class="selector-attr">[headers~=col1]</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-attr">[lang|=en]</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">blockquote</span><span class="selector-attr">[class=quote]</span><span class="selector-attr">[cite]</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-attr">[id^="nav"]</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h4><ul>
+<li>E::first-line 匹配 E 元素的第一行</li>
+<li>E::first-letter 匹配 E 元素的第一个字母</li>
+<li>E::before 在 E 元素之前插入生成的内容</li>
+<li>E::after 在 E 元素之后插入生成的内容</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::first-line</span> &#123; </span><br><span class="line">    <span class="attribute">font-weight</span>:bold;</span><br><span class="line">    color;#600;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.preamble</span><span class="selector-pseudo">::first-letter</span> &#123; </span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">1.5em</span>;</span><br><span class="line">     <span class="attribute">font-weight</span>:bold; </span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.cbb</span><span class="selector-pseudo">::before</span> &#123; </span><br><span class="line">    <span class="attribute">content</span>:<span class="string">""</span>;</span><br><span class="line">    <span class="attribute">display</span>:block; </span><br><span class="line">    <span class="attribute">height</span>:<span class="number">17px</span>; </span><br><span class="line">    <span class="attribute">width</span>:<span class="number">18px</span>; </span><br><span class="line">    <span class="attribute">background</span>:<span class="built_in">url</span>(top.png) </span><br><span class="line">    no-repeat <span class="number">0</span> <span class="number">0</span>; </span><br><span class="line">    <span class="attribute">margin</span>:<span class="number">0</span> <span class="number">0</span> <span class="number">0</span> -<span class="number">18px</span> </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span><span class="selector-pseudo">::after</span> &#123; <span class="attribute">content</span>: <span class="string">" ("</span> <span class="built_in">attr</span>(href) <span class="string">") "</span>&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h4><ul>
+<li>E:link 匹配所有未被点击的链接</li>
+<li>E:visited 匹配所有点击过的链接</li>
+<li>E:active 匹配鼠标在其上按下, 还没有释放的 E 元素</li>
+<li>E:hover 匹配鼠标悬停其上的 E 元素</li>
+<li>E:focus 匹配获得当前焦点的 E 元素</li>
+<li>E:lang(c) 匹配 lang 属性等于 c 的 E 元素</li>
+<li>E:enableed 匹配表单中激活的元素</li>
+<li>E:disabled 匹配表单中未激活的元素</li>
+<li>E:checked 匹配表单中被选中的 radio 或 checkbox</li>
+<li>E::selection 匹配当前用户选中的元素<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:first-child</span> &#123; <span class="attribute">font-style</span>:italic; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type=text]</span><span class="selector-pseudo">:focus</span> &#123; </span><br><span class="line">    <span class="attribute">color</span>:<span class="number">#000</span>; </span><br><span class="line">    <span class="attribute">background</span>:<span class="number">#ffe</span>; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type=text]</span><span class="selector-pseudo">:focus</span><span class="selector-pseudo">:hover</span> &#123; <span class="attribute">background</span>:<span class="number">#fff</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">q</span><span class="selector-pseudo">:lang(sv)</span> &#123; <span class="attribute">quotes</span>: <span class="string">"\201D"</span> <span class="string">"\201D"</span> <span class="string">"\2019"</span> <span class="string">"\2019"</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type="text"]</span><span class="selector-pseudo">:disabled</span> &#123; <span class="attribute">background</span>:<span class="number">#ddd</span>; &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="结构性伪类"><a href="#结构性伪类" class="headerlink" title="结构性伪类"></a>结构性伪类</h4><ul>
+<li>E:first-child 匹配作为第一个子元素的 E 的元素</li>
+<li>E:root 匹配文档的根元素, 就是对整个网页设置</li>
+<li>E:nth-child(n) 匹配 E 元素作为父亲的第 n 个子元素, 从 1 开始</li>
+<li>E:nth-last-child(n) 匹配 E 元素作为父亲的倒数第 n 个子元素, 从 1 开始</li>
+<li>E:nth-of-type(n) 与:nth-child()作用类似，但是仅匹配使用同种标签的元素</li>
+<li>E:nth-last-of-type(n) 与:nth-last-child() 作用类似，但是仅匹配使用同种标签的元素</li>
+<li>E:last-child 匹配父元素的最后一个子元素，等同于:nth-last-child(1)</li>
+<li>E:first-of-type 匹配父元素下使用同种标签的第一个子元素，等同于:nth-of-type(1)</li>
+<li>E:last-of-type 匹配父元素下使用同种标签的最后一个子元素，等同于:nth-last-of-type(1)</li>
+<li>E:only-child 匹配父元素下仅有的一个子元素，等同于:first-child:last-child或 :nth-child(1):nth-last-child(1)</li>
+<li>E:only-of-type 匹配父元素下使用同种标签的唯一一个子元素，等同于:first-of-type:last-of-type或 :nth-of-type(1):nth-last-of-type(1)</li>
+<li>E:empty 匹配一个不包含任何子元素的元素，注意，文本节点也被看作子元素<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:nth-child(3)</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:nth-child(odd)</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:nth-child(even)</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:nth-child(3n+0)</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:nth-child(3n)</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">tr</span><span class="selector-pseudo">:nth-child(2n+11)</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">tr</span><span class="selector-pseudo">:nth-last-child(2)</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:last-child</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:only-child</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:empty</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h4><ul>
+<li><p>当与伪类选择器结合使用时一定要要注意空格, 下面两种选择器选择的是不同的内容</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:first-child</span> &#123;&#125;</span><br><span class="line"><span class="selector-tag">div</span> <span class="selector-pseudo">:first-child</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过组合 css 选择器可以灵活快速的提取网页中想要的内容, 与正则结合使用效果更佳</p>
+</li>
+<li><p>关于 css 选择器的实际作用可以看这个问题 <a href="https://stackoverflow.com/questions/21856799/nokogiri-mechanize-css-selector-by-text" target="_blank" rel="noopener">nokogiri + mechanize css selector by text
+</a></p>
+</li>
+<li><p>关于 css 选择器还有优先级的问题, 后续补上</p>
+</li>
+</ul>
+
       
 
       
@@ -307,6 +383,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -798,6 +885,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">教程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">技巧</a>
               </li>
              
@@ -807,10 +898,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">教程</a>
               </li>
              
               <li class="article-tag-list-item">
